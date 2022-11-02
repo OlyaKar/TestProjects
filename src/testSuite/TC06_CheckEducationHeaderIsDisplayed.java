@@ -1,4 +1,4 @@
-package TestSuite;
+package testSuite;
 
 import static org.junit.Assert.assertTrue;
 
@@ -6,9 +6,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import Pages.EducationPage;
+import pages.EducationPage;
+import pages.HomePage;
 
-public class CheckEducationHeaderIsDisplayed {
+public class TC06_CheckEducationHeaderIsDisplayed {
 	
 	private final String EXPECTED_STRING = "EDUCATION";
 	
@@ -24,9 +25,11 @@ public class CheckEducationHeaderIsDisplayed {
 	
 	@Test
 	public void checkEducationHeaderIsDisplayed() {
-		
+
+		HomePage homePage = new HomePage(Base.driver);
 		EducationPage educationPage = new EducationPage(Base.driver);
-		educationPage.clickEducation();
+		
+		homePage.clickEducation();
 		
 		assertTrue(educationPage.findHeaderText().equalsIgnoreCase(EXPECTED_STRING));
 	}	

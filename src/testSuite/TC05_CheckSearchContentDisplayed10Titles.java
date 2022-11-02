@@ -1,4 +1,4 @@
-package TestSuite;
+package testSuite;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
@@ -8,10 +8,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
-import Pages.SearchPage;
-import TestPackage.Utils;
+import pages.HomePage;
+import pages.SearchPage;
+import utilsLib.Utils;
 
-public class CheckSearchContentDisplayed10Titles {
+public class TC05_CheckSearchContentDisplayed10Titles {
 	private String TEXT_TO_INPUT = "Java";
 	private int EXPECTED_ITEMS = 10;
 	
@@ -28,9 +29,11 @@ public class CheckSearchContentDisplayed10Titles {
 	@Test
 	public void checkContentDisplayed10Titles() {
 
+		HomePage homePage = new HomePage(Base.driver);
 		SearchPage searchPage = new SearchPage(Base.driver);
 		
-		searchPage.clickSearchButton(TEXT_TO_INPUT);
+		homePage.fillSearchBar(TEXT_TO_INPUT);
+		homePage.clickSearchButton();
 		
 		Utils.waitForSomeTime(2);
 

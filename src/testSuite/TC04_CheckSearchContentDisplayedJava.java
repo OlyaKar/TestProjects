@@ -1,4 +1,4 @@
-package TestSuite;
+package testSuite;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -8,10 +8,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
-import Pages.SearchPage;
-import TestPackage.Utils;
+import pages.HomePage;
+import pages.SearchPage;
+import utilsLib.Utils;
 
-public class CheckSearchContentDisplayedJava {
+public class TC04_CheckSearchContentDisplayedJava {
 	private String TEXT_TO_INPUT = "Java";
 	
 	private final String EXPECTED_JAVA = "Java";
@@ -29,9 +30,10 @@ public class CheckSearchContentDisplayedJava {
 	@Test
 	public void checkContentDisplayedJava() {
 
+		HomePage homePage = new HomePage(Base.driver);
 		SearchPage searchPage = new SearchPage(Base.driver);
 		
-		searchPage.clickSearchButton(TEXT_TO_INPUT);
+		homePage.clickSearchButton();
 		
 		Utils.waitForSomeTime(2);	
 		
