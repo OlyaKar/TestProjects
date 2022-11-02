@@ -1,4 +1,4 @@
-package TestSuite;
+package testSuite;
 
 import static org.junit.Assert.assertTrue;
 
@@ -6,10 +6,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import Pages.HomePage;
-import TestPackage.Utils;
+import pages.HomePage;
+import utilsLib.Utils;
 
-public class CheckSearchDisplaysRelatedContent {
+public class TC03_CheckSearchDisplaysRelatedContent {
 	private String TEXT_TO_INPUT = "Java";
 
 	@Before 

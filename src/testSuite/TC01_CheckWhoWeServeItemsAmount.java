@@ -1,13 +1,14 @@
-package TestSuite;
+package testSuite;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import Pages.HomePage;
-import TestPackage.Utils;
 
-public class CheckWhoWeServeItemsAmount {
+import pages.HomePage;
+import utilsLib.Utils;
+
+public class TC01_CheckWhoWeServeItemsAmount {
 	private int WHO_WE_SERVE_EXPECTED_ITEMS = 11;
 	
 	@Before 

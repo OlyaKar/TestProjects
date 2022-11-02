@@ -1,4 +1,4 @@
-package TestSuite;
+package testSuite;
 
 import static org.junit.Assert.assertTrue;
 
@@ -9,13 +9,14 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
-import Pages.EducationPage;
+import pages.EducationPage;
+import pages.HomePage;
 
-public class CheckEducationItems {
+public class TC08_CheckEducationItems {
 
 	private final int EXPECTED_EDUCATION_ITEMS_COUNT = 13;
 	
-	private final String[] EducationList = {
+	private final String[] EXPECTED_EducationList = {
 			"Information & Library Science",
 			"Education & Public Policy",
 			"K-12 General",
@@ -43,13 +44,16 @@ public class CheckEducationItems {
 	
 	@Test
 	public void checkEducationContainsItems() {
+		HomePage homePage = new HomePage(Base.driver);
 		EducationPage educationPage = new EducationPage(Base.driver);
+		
+		homePage.clickEducation();
 		
 		List  <WebElement> subjectsItemsList = educationPage.educationElementsList();	
 		
 		for(int i=0; i< EXPECTED_EDUCATION_ITEMS_COUNT; i++)
 		{
-			assertTrue(subjectsItemsList.get(i).getText().equalsIgnoreCase(EducationList[i]));
+			assertTrue(subjectsItemsList.get(i).getText().equalsIgnoreCase(EXPECTED_EducationList[i]));
 		}
 	}
 }

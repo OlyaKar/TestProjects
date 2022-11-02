@@ -1,4 +1,4 @@
-package TestSuite;
+package testSuite;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,13 +6,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import Pages.HomePage;
-import TestPackage.Utils;
+import pages.HomePage;
+import utilsLib.Utils;
 
-public class CheckWhoWeServeContainsItems {
+public class TC02_CheckWhoWeServeContainsItems {
 	
 	
-	private final String[] WhoWeServeList = {
+	private final String[] EXPECTED_WhoWeServeList = {
 			"Students", 
 			"Instructors",
 			"Book Authors",
@@ -46,7 +46,7 @@ public class CheckWhoWeServeContainsItems {
 		Utils.waitForSomeTime(2);
 		
 		for(int i=0; i< EXPECTED_ITEMS; i++) {
-			assertEquals(WhoWeServeList[i].toUpperCase(),homePage.whoWeServed_elemTitle().get(i).getText().toUpperCase());
+			assertEquals(EXPECTED_WhoWeServeList[i].toUpperCase(),homePage.whoWeServed_elemTitle().get(i).getText().toUpperCase());
 		}
 	}
 }
